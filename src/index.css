@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: #eaeae9;
+  color: #242424;
+  padding: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin:0;
+}
+.main {
+  flex:1;
+}
+.footer {
+  height:50px;
+  margin-top:auto;
+  text-align: center;
+}
