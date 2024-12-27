@@ -5,6 +5,9 @@
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -15,8 +18,19 @@
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    cursor: pointer;
 }
 
 .edzest {
     font-weight: 300;
+}
+
+.settings-icon {
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.settings-icon:hover {
+    color: #ccc;
 }
