@@ -13,6 +13,7 @@ function Settings() {
         setShowToast(true);
         setTimeout(() => {
             setShowToast(false);
+            window.location.reload();
         }, 3000); // Hide toast after 3 seconds
     };
 
@@ -21,6 +22,7 @@ function Settings() {
         setIsDarkTheme(newTheme);
         localStorage.setItem('theme', newTheme ? 'dark' : 'light');
         document.body.classList.toggle('dark-theme');
+        window.location.reload();
     };
 
     return (
