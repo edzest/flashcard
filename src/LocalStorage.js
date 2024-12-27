@@ -27,5 +27,15 @@ export const clearProgress = (topic) => {
 }
 
 export const clearAllProgress = () => {
-    localStorage.clear();
+    const prefix = 'ez-fc-progress-';
+    var keys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith(prefix)) {
+            keys.push(key)
+        }
+    }
+    for (let i = 0; i < keys.length; i++) {
+        localStorage.removeItem(keys[i]);
+    }
 }

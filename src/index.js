@@ -8,6 +8,14 @@ import wordSets from './WordSets';
 import Settings from './Settings';
 import Navbar from './Navbar';
 
+// Load and apply the theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-theme');
+} else {
+  document.body.classList.remove('dark-theme');
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

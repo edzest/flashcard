@@ -1,6 +1,6 @@
 .navbar {
-    background-color: #333;
-    color: white;
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
     padding: 10px 20px;
 }
 
@@ -32,5 +32,5 @@
 }
 
 .settings-icon:hover {
-    color: #ccc;
+    color: var(--card-border-color);
 }

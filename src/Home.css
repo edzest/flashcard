@@ -20,7 +20,8 @@
 }
 
 .flashcard-set {
-  background-color: #f8f8f8;
+  background-color: var(--card-back-background-color);
+  border: 1px solid var(--card-border-color);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
