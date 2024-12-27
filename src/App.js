@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './App.css';
 import ProgressBar from './ProgressBar';
 import Card from './Card';
+import { saveProgress, getSavedWords, clearProgress } from './LocalStorage';
 import { CircularLinkedList } from './CircularLinkedList';
 
 function App({ words, topic }) {
@@ -15,10 +16,12 @@ function App({ words, topic }) {
 
   useEffect(() => {
     const newList = new CircularLinkedList();
-    words.forEach(word => newList.add(word));
+    const savedWords = getSavedWords(topic);
+    words.filter(w => !savedWords.includes(w.word)).forEach(word => newList.add(word));
     setList(newList);
+    setScore(savedWords.length)
     setCurrentNode(newList.head);
-  }, [words]);
+  }, [topic, words]);
 
   const onCardClick = () => {
     if (!isFlipped) {
@@ -29,11 +32,13 @@ function App({ words, topic }) {
   const handleKnowClick = () => {
     /*
     1. increment score
-    2. filter the word & increment currentIndex
-    3. flip the card
+    2. save the word in local storage
+    3. filter the word & increment currentIndex
+    4. flip the card
     */
     setScore(score + 1);
     list.remove(currentNode.data);
+    saveProgress(topic, currentNode.data.word)
     setCurrentNode(list.getNext(currentNode));
     setIsFlipped(false);
   };
@@ -47,11 +52,30 @@ function App({ words, topic }) {
     setIsFlipped(false);
   };
 
+  const reset = () => {
+    clearProgress(topic);
+    const newList = new CircularLinkedList();
+    words.forEach(word => newList.add(word));
+    setList(newList);
+    setCurrentNode(newList.head);
+    setScore(0);
+  }
+
   if (list.getSize() === 0) {
     return (
       <div className='App'>
-        <h1>Flash Card Set 1</h1>
-        <p>You have completed the set</p>
+        <h1>{topic}</h1>
+        
+        <p className='party-popper'>🎉</p>
+        <p>You have mastered all the concepts in {topic}.</p>
+        <div className='button-container'>
+        <button onClick={reset}>
+          Reset the score
+        </button>
+        <button onClick={() => navigate('/')}>
+          Back to home
+        </button>
+        </div>
       </div>
     );
   }
