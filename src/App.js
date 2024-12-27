@@ -68,8 +68,8 @@ function App({ words, topic }) {
       </div>
 
       {isFlipped && <div className="button-container">
-        <button className="know-button" onClick={handleKnowClick}>I know this</button>
-        <button className="dont-know-button" onClick={handleDontKnowClick}>I don't know this</button>
+        <button className="know-button" onClick={handleKnowClick}>I knew this</button>
+        <button className="dont-know-button" onClick={handleDontKnowClick}>I didn't know this</button>
       </div>}
     </div>
   );
