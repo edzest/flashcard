@@ -25,3 +25,7 @@ export const clearProgress = (topic) => {
     const key = `ez-fc-progress-${topic}`;
     localStorage.removeItem(key);
 }
+
+export const clearAllProgress = () => {
+    localStorage.clear();
+}
