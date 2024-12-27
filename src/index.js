@@ -6,10 +6,12 @@ import Home from './Home';
 import App from './App';
 import wordSets from './WordSets';
 import Settings from './Settings';
+import Navbar from './Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Navbar />
     <div className='app-container'>
       <main>
         <Router>

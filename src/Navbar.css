@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.navbar-title {
+    margin: 0;
+    font-family: "Sora", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.edzest {
+    font-weight: 300;
+}
