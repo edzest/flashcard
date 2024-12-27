@@ -5,16 +5,20 @@ import './index.css';
 import Home from './Home';
 import App from './App';
 import wordSets from './WordSets';
+import Settings from './Settings';
+import Navbar from './Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Navbar />
     <div className='app-container'>
       <main>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/app/:topic" element={<AppWrapper />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </Router>
       </main>

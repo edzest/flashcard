@@ -13,7 +13,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1 className='title'>PMP® Concepts FlashCards</h1>
+      <h1 className='title'>PMP® Concepts</h1>
       <br />
       <br />
       <div className='flashcard-sets'>
