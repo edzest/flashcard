@@ -83,7 +83,7 @@ function App({ words, topic }) {
   return (
     <div className='App'>
       <div className="header">
-        <span className="back-arrow" onClick={() => navigate(-1)}>&#8592;</span>
+        <span className="back-arrow" onClick={() => navigate('/')}>&#8592;</span>
         <h1>{topic}</h1>
       </div>
       <ProgressBar score={score} total={words.length} />

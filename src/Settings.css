@@ -1,10 +1,11 @@
 .settings-btn {
-    background-color: #e0e0df;
+    color: var(--text-color);
+    background-color: var(--settings-button-background);
     box-shadow: none;
 }
 
 .settings-btn:hover {
-    background-color: #a8a8a8;
+    background-color: var(--settings-button-hover-background);
 }
 
 .toast {
@@ -12,11 +13,61 @@
     top: 75px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
-    color: white;
+    background-color: var(--toast-background-color);
+    color: var(--toast-text-color);
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.9;
     z-index: 1000;
-  }
+}
+
+hr {
+    margin-top: 24px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--settings-button-background);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--button-background-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
