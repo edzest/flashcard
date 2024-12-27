@@ -40,3 +40,13 @@
 .flashcard-set p {
   margin: 0;
 }
+
+.words-length {
+  color: #7e7e7e;
+  font-weight: bold;
+  font-style: "Sora" serif;
+}
+
+.completed {
+  color: #b6b6b6;
+}

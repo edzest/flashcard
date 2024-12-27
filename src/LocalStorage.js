@@ -7,6 +7,11 @@ export const getSavedWords = (topic) => {
     return JSON.parse(savedData)
 }
 
+export const getSavedWordCount = (topic) => {
+    const words = getSavedWords(topic);
+    return words.length;
+}
+
 export const saveProgress = (topic, word) => {
     // save the known words in local storage
     // so that it can be filtered out upon next load
